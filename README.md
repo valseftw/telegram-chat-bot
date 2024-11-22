@@ -23,3 +23,11 @@ Your suggestions and feedback are always welcome! Feel free to open an issue or 
 1. Clone the repository:
    ```bash
    git clone https://github.com/valseftw/telegram-chat-bot.git
+
+   npm install
+
+   node index.js
+
+   my node.js version : 20.11.1
+
+   ```
