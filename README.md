@@ -40,11 +40,15 @@ The bot is built using the Telegraf framework and integrates MongoDB for storing
 1. Bot Initialization: The bot connects to Telegram's Bot API using the Telegraf library.
 2. Database Connection: MongoDB is used to save user data such as names and ages.
 3. Register Command:
-    a. Users can register with the /register command followed by their age and name.
-    b. The bot validates inputs and stores the information in the database.
-4. Get Command:
-    a. You can get user specific name /get <name>.
-    b. You can get all users /get allusers.
-5. Message Handling: The bot greets users and responds dynamically to messages.
+```bash
+    Users can register with the /register command followed by their age and name.\n
+    The bot validates inputs and stores the information in the database.
+ ```
+5. Get Command:
+```bash
+    You can get user specific name /get <name>.
+    You can get all users /get allusers.
+```
+6. Message Handling: The bot greets users and responds dynamically to messages.
 
 **With these features, the bot ensures real-time interaction and efficient data management.**
