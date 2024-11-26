@@ -23,11 +23,25 @@ Your suggestions and feedback are always welcome! Feel free to open an issue or 
 1. Clone the repository:
    ```bash
    git clone https://github.com/valseftw/telegram-chat-bot.git
-
-   npm install
-
-   node index.js
-
-   my node.js version : 20.11.1
-
    ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the bot:
+   ```bash
+   node index.js
+   ```
+4. Ensure your Node.js version is '20.11.1' or compatible.:
+## 📜 Code Explanation
+
+The bot is built using the Telegraf framework and integrates MongoDB for storing user data. Below is a brief explanation of the main functionality:
+
+1. Bot Initialization: The bot connects to Telegram's Bot API using the Telegraf library.
+2. Database Connection: MongoDB is used to save user data such as names and ages.
+3. Register Command:
+    a. Users can register with the /register command followed by their age and name.
+    b. The bot validates inputs and stores the information in the database.
+4. Message Handling: The bot greets users and responds dynamically to messages.
+
+**With these features, the bot ensures real-time interaction and efficient data management.**
