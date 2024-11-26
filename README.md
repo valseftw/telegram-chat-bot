@@ -42,6 +42,9 @@ The bot is built using the Telegraf framework and integrates MongoDB for storing
 3. Register Command:
     a. Users can register with the /register command followed by their age and name.
     b. The bot validates inputs and stores the information in the database.
-4. Message Handling: The bot greets users and responds dynamically to messages.
+4. Get Command:
+    a. You can get user specific name /get <name>
+    b. You can get all users /get allusers
+5. Message Handling: The bot greets users and responds dynamically to messages.
 
 **With these features, the bot ensures real-time interaction and efficient data management.**
