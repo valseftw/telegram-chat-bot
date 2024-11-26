@@ -72,11 +72,21 @@ bot.on('message', async (ctx) => { // When the bot receives a message
     if (args[0] === '/get') { // If the first argument is '/get'
         const name = args[1]; // Get the name
         if (!name) return ctx.reply('Please enter a name!'); // If the user doesn't enter a name
-        //get user mongodb
+        if(name == 'allusers')
+        {
+            var users = await User.find(); // Find all users
+            if (!users) return ctx.reply('Users not found!'); // If the users are not found
+            var userlist = ''; // Create a new user list
+            users.forEach(user => { // For each user
+                userlist += `Name: ${user.name}, Age: ${user.age}\n`; // Add the user to the user list
+            });
+            return ctx.reply(userlist); // Reply to the user
+        }
+        
         var user = await User.findOne({ name: name}) // Find the user by name
         if (!user) return ctx.reply('User not found!'); // If the user is not found
         return ctx.reply(`User found! Name: ${user.name}, Age: ${user.age}`); // Reply to the user
-        
+
     }
 
 });
