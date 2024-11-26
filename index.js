@@ -65,8 +65,18 @@ bot.on('message', async (ctx) => { // When the bot receives a message
 
 
         const user = new User({ name: args[2], age: age }); // Create a new user
-        await user.save(); // Save the user to the database
-        ctx.reply('User saved successfully!'); // Reply to the user
+        var savedUser = await user.save(); // Save the user to the database
+        if (!savedUser) return ctx.reply('An error occurred while saving the user!'); // If an error occurred while saving the user
+        return ctx.reply('User saved successfully!'); // Reply to the user
+    }
+    if (args[0] === '/get') { // If the first argument is '/get'
+        const name = args[1]; // Get the name
+        if (!name) return ctx.reply('Please enter a name!'); // If the user doesn't enter a name
+        //get user mongodb
+        var user = await User.findOne({ name: name}) // Find the user by name
+        if (!user) return ctx.reply('User not found!'); // If the user is not found
+        return ctx.reply(`User found! Name: ${user.name}, Age: ${user.age}`); // Reply to the user
+        
     }
 
 });
